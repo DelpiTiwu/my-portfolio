@@ -16,7 +16,7 @@ export default function Home() {
         <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
       </div>
-      
+
       <div className="relative z-10 max-w-4xl mx-auto">
         {/* Professional Greeting */}
         <motion.div
@@ -30,7 +30,7 @@ export default function Home() {
             Delpiero
           </h1>
           <h2 className="text-2xl md:text-3xl font-semibold text-gray-300 mb-6">
-            Frontend Developer
+            Backend Developer
           </h2>
         </motion.div>
 
@@ -41,9 +41,7 @@ export default function Home() {
           transition={{ delay: 0.4, duration: 0.6 }}
           className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-8 leading-relaxed"
         >
-          Antusias dalam menciptakan aplikasi web modern, responsif, dan berkinerja tinggi.
-          Spesialis dalam ekosistem React dengan keahlian di Next.js, TypeScript, dan Tailwind CSS.
-        </motion.p>
+          Saya adalah Backend Developer dengan fokus utama pada rekayasa API berperforma tinggi menggunakan Laravel dan PHP. Keahlian saya terletak pada pembangunan arsitektur backend yang aman dan mudah diskalakan untuk memenuhi kebutuhan bisnis yang terus berkembang. Saya juga cakap dalam memanfaatkan Node.js untuk membangun aplikasi sisi server dan mahir mengelola database PostgreSQL. Berpengalaman dalam menerapkan arsitektur microservices dan melakukan deployment aplikasi ke lingkungan cloud.        </motion.p>
 
         {/* Professional CTAs */}
         <motion.div
@@ -76,7 +74,7 @@ export default function Home() {
           className="flex justify-center gap-6"
         >
           <a
-            href="https://github.com/delpiero"
+            href="https://github.com/DelpiTiwu"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300 text-gray-400 hover:text-white hover:scale-110"
@@ -84,7 +82,7 @@ export default function Home() {
             <Github className="w-6 h-6" />
           </a>
           <a
-            href="https://linkedin.com/in/delpiero"
+            href="https://www.linkedin.com/in/makarius-delpiero-4bb705349/"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300 text-gray-400 hover:text-white hover:scale-110"
@@ -92,7 +90,7 @@ export default function Home() {
             <Linkedin className="w-6 h-6" />
           </a>
           <a
-            href="mailto:delpiero@email.com"
+            href="mailto:alexandrodelpiero306@gmail.com"
             className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 transition-all duration-300 text-gray-400 hover:text-white hover:scale-110"
           >
             <Mail className="w-6 h-6" />

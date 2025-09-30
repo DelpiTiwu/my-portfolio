@@ -19,32 +19,28 @@ import { useState } from 'react';
 
 const skills = [
   {
-    category: "Frontend",
+    category: "Backend & API",
     technologies: [
-      { name: "React", level: 95, color: "from-blue-400 to-blue-600" },
-      { name: "Next.js", level: 90, color: "from-gray-400 to-gray-600" },
-      { name: "TypeScript", level: 85, color: "from-blue-500 to-blue-700" },
-      { name: "Tailwind CSS", level: 95, color: "from-cyan-400 to-cyan-600" },
-      { name: "Framer Motion", level: 80, color: "from-purple-400 to-purple-600" }
+      { name: "Laravel", level: 80, color: "from-blue-400 to-blue-600" },
+      { name: "Node.js", level: 79, color: "from-gray-400 to-gray-600" },
+      { name: "MySql", level: 89, color: "from-blue-500 to-blue-700" },
+      { name: "Postgresql", level: 76, color: "from-cyan-400 to-cyan-600" },
     ]
   },
   {
     category: "Tools & Others",
     technologies: [
-      { name: "Git", level: 90, color: "from-orange-400 to-orange-600" },
-      { name: "Docker", level: 70, color: "from-blue-500 to-blue-700" },
-      { name: "AWS", level: 65, color: "from-yellow-500 to-yellow-700" },
-      { name: "Figma", level: 85, color: "from-pink-400 to-pink-600" },
-      { name: "Vercel", level: 90, color: "from-gray-400 to-gray-600" }
+      { name: "Html & CSS", level: 90, color: "from-orange-400 to-orange-600" },
+      { name: "Java Script", level: 70, color: "from-blue-500 to-blue-700" },
     ]
   }
 ];
 
 const stats = [
   { label: "Tahun Pengalaman", value: "2+", icon: Calendar },
-  { label: "Proyek Selesai", value: "19+", icon: Code },
-  { label: "Klien Puas", value: "12+", icon: Users },
-  { label: "Sertifikasi", value: "6", icon: Award }
+  { label: "Proyek Selesai", value: "4+", icon: Code },
+  { label: "Klien Puas", value: "6+", icon: Users },
+  { label: "Sertifikasi", value: "0", icon: Award }
 ];
 
 export default function AboutPage() {
@@ -68,7 +64,7 @@ export default function AboutPage() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <img
-                src="prof.jpg" 
+                src="2.jpg" 
                 alt="Alexandro Del Piero"
                 width={160}
                 height={160}
@@ -81,7 +77,7 @@ export default function AboutPage() {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">
-            Alexandro Del Piero
+            Makarius Delpiero Wawo Tiwu
           </h1>
           
           <div className="flex items-center justify-center gap-2 mb-4">
@@ -89,9 +85,9 @@ export default function AboutPage() {
             <span className="text-gray-300">Denpasar, Bali, Indonesia</span>
           </div>
           
-          <p className="text-xl text-blue-400 font-medium mb-6">
-            Junior Frontend Developer & UI/UX Enthusiast
-          </p>
+            <p className="text-xl text-blue-400 font-medium mb-6">
+            Junior Backend Developer & API Specialist
+            </p>
 
           <div className="flex justify-center gap-4 mb-8">
             <a
@@ -112,10 +108,10 @@ export default function AboutPage() {
           </div>
 
           <div className="flex justify-center gap-4">
-            <a href="https://github.com/alexandro" target="_blank" className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110">
+            <a href="https://github.com/DelpiTiwu" target="_blank" className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110">
               <Github className="w-6 h-6" />
             </a>
-            <a href="https://linkedin.com/in/alexandro" target="_blank" className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110">
+            <a href="https://www.linkedin.com/in/makarius-delpiero-4bb705349/" target="_blank" className="p-3 rounded-full bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110">
               <Linkedin className="w-6 h-6" />
             </a>
           </div>
@@ -164,15 +160,15 @@ export default function AboutPage() {
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold text-white mb-6">Tentang Saya</h2>
+                    <p className="text-gray-300 leading-relaxed">
+                    Saya adalah seorang Backend Developer yang antusias dengan pengalaman lebih dari 2 tahun dalam membangun API, sistem backend yang scalable, dan integrasi layanan modern.
+                    Perjalanan saya dimulai dari rasa penasaran tentang bagaimana data diproses di balik layar dan berkembang menjadi passion untuk menciptakan solusi backend yang efisien dan andal.
+                    </p>
+                    <p className="text-gray-300 leading-relaxed">
+                      Saya fokus pada pengembangan backend, terutama dengan Node.js, Express, TypeScript, dan integrasi API modern. Saya percaya pentingnya menulis kode yang efisien, scalable, serta mengikuti best practice untuk menghasilkan solusi backend yang andal dan berkualitas tinggi.
+                    </p>
                   <p className="text-gray-300 leading-relaxed">
-                    Saya adalah seorang Frontend Developer yang antusias dengan pengalaman lebih dari 2 tahun dalam menciptakan aplikasi web modern, responsif, dan ramah pengguna.
-                    Perjalanan saya dimulai dari rasa penasaran tentang cara kerja website dan berkembang menjadi passion yang mendalam untuk menciptakan pengalaman digital yang luar biasa.
-                  </p>
-                  <p className="text-gray-300 leading-relaxed">
-                    Saya fokus pada ekosistem React, terutama dengan Next.js, TypeScript, dan framework CSS modern. Saya percaya pada pentingnya menulis kode yang bersih, mudah dipelihara, dan mengikuti best practice untuk menghasilkan solusi berkualitas tinggi.
-                  </p>
-                  <p className="text-gray-300 leading-relaxed">
-                    Saat tidak sedang ngoding, saya senang mengeksplorasi teknologi baru, berkontribusi ke proyek open-source, atau menikmati keindahan pantai di Bali.
+                    Saat tidak sedang ngoding, saya senang mengeksplorasi teknologi baru, berkontribusi ke proyek open-source, atau menikmati keindahan Gunung di Bali.
                   </p>
                 </div>
 
@@ -183,14 +179,14 @@ export default function AboutPage() {
                       Hal yang Saya Sukai
                     </h3>
                     <ul className="space-y-3 text-gray-300">
-                      <li className="flex items-center gap-3">
+                        <li className="flex items-center gap-3">
                         <Code className="w-4 h-4 text-blue-400" />
-                        Membangun UI interaktif
-                      </li>
-                      <li className="flex items-center gap-3">
-                        <Palette className="w-4 h-4 text-blue-400" />
-                        Mendesain tampilan yang presisi
-                      </li>
+                        Membangun sistem backend yang efisien
+                        </li>
+                        <li className="flex items-center gap-3">
+                        <Code className="w-4 h-4 text-blue-400" />
+                        Mengembangkan arsitektur backend yang handal
+                        </li>
                       <li className="flex items-center gap-3">
                         <Users className="w-4 h-4 text-blue-400" />
                         Kolaborasi tim yang hebat

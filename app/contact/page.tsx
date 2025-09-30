@@ -16,7 +16,7 @@ export default function ContactPage() {
 
       <div className="flex justify-center gap-8 text-3xl">
         <a
-          href="https://www.instagram.com/delpiero_"
+          href="https://www.instagram.com/delpi_tiwu"
           target="_blank"
           rel="noopener noreferrer"
           className="text-pink-500 hover:text-pink-600 transition"
@@ -24,7 +24,7 @@ export default function ContactPage() {
           <FaInstagram />
         </a>
         <a
-          href="https://wa.me/6281234567890"
+          href="https://wa.me/6282211358190"
           target="_blank"
           rel="noopener noreferrer"
           className="text-green-500 hover:text-green-600 transition"
@@ -32,7 +32,7 @@ export default function ContactPage() {
           <FaWhatsapp />
         </a>
         <a
-          href="mailto:alexandro@email.com"
+          href="mailto:alexandrodelpiero306@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
           className="text-blue-400 hover:text-blue-500 transition"
