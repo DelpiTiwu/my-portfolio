@@ -3,6 +3,7 @@
 import { motion, easeOut } from "framer-motion";
 import { ExternalLink, Github, Tag, ArrowRight } from "lucide-react";
 import { useState } from "react";
+import ParticlesBackground from "@/components/ParticlesBackground";
 
 const container = {
   hidden: { opacity: 0 },
@@ -30,8 +31,8 @@ const projects = [
   {
     id: 1,
     title: "E-Commerce Platform",
-    description: "Solusi e-commerce full-stack dengan fitur canggih seperti manajemen inventaris real-time, pemrosesan pembayaran, dan dashboard admin.",
-    longDescription: "Membangun platform e-commerce komprehensif dari awal menggunakan teknologi web modern. Fitur meliputi autentikasi pengguna, katalog produk, keranjang belanja, proses checkout, manajemen pesanan, dan integrasi pembayaran dengan Stripe.",
+    description: "Full-stack e-commerce solution with advanced features like real-time inventory management, payment processing, and admin dashboard.",
+    longDescription: "Built a comprehensive e-commerce platform from scratch using modern web technologies. Features include user authentication, product catalog, shopping cart, checkout process, order management, and Stripe payment integration.",
     image: "/e.png",
     technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe", "Tailwind CSS"],
     category: "Full Stack",
@@ -44,8 +45,8 @@ const projects = [
   {
     id: 2,
     title: "Task Management App",
-    description: "Aplikasi manajemen tugas kolaboratif dengan pembaruan real-time, fitur kolaborasi tim, dan pelacakan proyek tingkat lanjut.",
-    longDescription: "Mengembangkan solusi manajemen tugas komprehensif untuk tim. Termasuk fungsi drag-and-drop, kolaborasi real-time, lampiran file, pelacakan waktu, dan pelaporan detail.",
+    description: "Collaborative task management application with real-time updates, team collaboration features, and advanced project tracking.",
+    longDescription: "Developed a comprehensive task management solution for teams. Includes drag-and-drop functionality, real-time collaboration, file attachments, time tracking, and detailed reporting.",
     image: "/api/placeholder/400/250",
     technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Express", "Material-UI"],
     category: "Full Stack",
@@ -58,8 +59,8 @@ const projects = [
   {
     id: 3,
     title: "Weather Dashboard",
-    description: "Dashboard cuaca interaktif dengan prakiraan berbasis lokasi, visualisasi data historis, dan peringatan cuaca ekstrem.",
-    longDescription: "Membuat aplikasi cuaca modern dengan visualisasi data yang menarik. Fitur meliputi cuaca saat ini, prakiraan 7 hari, peta interaktif, dan widget dashboard yang dapat disesuaikan.",
+    description: "Interactive weather dashboard with location-based forecasts, historical data visualization, and extreme weather alerts.",
+    longDescription: "Created a modern weather application with engaging data visualization. Features include current weather, 7-day forecast, interactive maps, and customizable dashboard widgets.",
     image: "/api/placeholder/400/250",
     technologies: ["React", "D3.js", "OpenWeather API", "Chart.js", "Tailwind CSS"],
     category: "Frontend",
@@ -77,15 +78,28 @@ export default function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const filteredProjects = selectedCategory === "All" 
-    ? projects 
+  const filteredProjects = selectedCategory === "All"
+    ? projects
     : projects.filter(project => project.category === selectedCategory);
 
   const featuredProjects = projects.filter(project => project.featured);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
-      <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen relative bg-black overflow-hidden">
+      {/* Particles Background */}
+      <div className="absolute inset-0 z-0">
+        <ParticlesBackground
+          particleColor="#3b82f6"
+          particleCount={80}
+          speed={0.2}
+          size={1.2}
+        />
+      </div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-black/80 to-black pointer-events-none"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
 
         {/* Header Section */}
         <motion.div
@@ -98,7 +112,7 @@ export default function ProjectsPage() {
             My Projects
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-            A collection of my work showcasing modern web development practices, 
+            A collection of my work showcasing modern web development practices,
             innovative solutions, and attention to detail in every project.
           </p>
         </motion.div>

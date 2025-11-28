@@ -1,11 +1,11 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { 
-  Code, 
-  Palette, 
-  Coffee, 
-  MapPin, 
+import {
+  Code,
+  Palette,
+  Coffee,
+  MapPin,
   Calendar,
   Award,
   Users,
@@ -16,6 +16,8 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { useState } from 'react';
+import ParticlesBackground from '@/components/ParticlesBackground';
+import SkillsOrbit from '@/components/SkillsOrbit';
 
 const skills = [
   {
@@ -37,18 +39,31 @@ const skills = [
 ];
 
 const stats = [
-  { label: "Tahun Pengalaman", value: "2+", icon: Calendar },
-  { label: "Proyek Selesai", value: "4+", icon: Code },
-  { label: "Klien Puas", value: "6+", icon: Users },
-  { label: "Sertifikasi", value: "0", icon: Award }
+  { label: "Years Experience", value: "2+", icon: Calendar },
+  { label: "Projects Done", value: "4+", icon: Code },
+  { label: "Happy Clients", value: "6+", icon: Users },
+  { label: "Certifications", value: "0", icon: Award }
 ];
 
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState("about");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div className="min-h-screen relative bg-black overflow-hidden">
+      {/* Particles Background */}
+      <div className="absolute inset-0 z-0">
+        <ParticlesBackground
+          particleColor="#3b82f6"
+          particleCount={80}
+          speed={0.2}
+          size={1.2}
+        />
+      </div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-transparent via-black/80 to-black pointer-events-none"></div>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
         {/* Hero Section */}
         <motion.div
@@ -64,7 +79,7 @@ export default function AboutPage() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <img
-                src="2.jpg" 
+                src="2.jpg"
                 alt="Alexandro Del Piero"
                 width={160}
                 height={160}
@@ -79,15 +94,15 @@ export default function AboutPage() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-blue-100 to-blue-300 bg-clip-text text-transparent">
             Makarius Delpiero Wawo Tiwu
           </h1>
-          
+
           <div className="flex items-center justify-center gap-2 mb-4">
             <MapPin className="w-5 h-5 text-blue-400" />
             <span className="text-gray-300">Denpasar, Bali, Indonesia</span>
           </div>
-          
-            <p className="text-xl text-blue-400 font-medium mb-6">
+
+          <p className="text-xl text-blue-400 font-medium mb-6">
             Junior Backend Developer & API Specialist
-            </p>
+          </p>
 
           <div className="flex justify-center gap-4 mb-8">
             <a
@@ -99,11 +114,11 @@ export default function AboutPage() {
               Download CV
             </a>
             <a
-              href="mailto:alexandro@example.com"
+              href="/contact"
               className="flex items-center gap-2 px-6 py-3 border-2 border-gray-600 hover:border-gray-500 text-gray-300 hover:text-white rounded-full transition-all duration-300 hover:bg-gray-800/50"
             >
               <Mail className="w-5 h-5" />
-              Kontak Saya
+              Contact Me
             </a>
           </div>
 
@@ -136,7 +151,7 @@ export default function AboutPage() {
         {/* Tab Navigation */}
         <div className="flex justify-center mb-12">
           <div className="flex gap-2 p-2 bg-gray-800/50 rounded-2xl backdrop-blur-sm border border-gray-700/50">
-            {[{ id: "about", label: "Tentang Saya" }, { id: "skills", label: "Skill" }].map((tab) => (
+            {[{ id: "about", label: "About Me" }, { id: "skills", label: "Skills" }].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
@@ -159,16 +174,16 @@ export default function AboutPage() {
             <div className="max-w-4xl mx-auto">
               <div className="grid md:grid-cols-2 gap-12">
                 <div className="space-y-6">
-                  <h2 className="text-3xl font-bold text-white mb-6">Tentang Saya</h2>
-                    <p className="text-gray-300 leading-relaxed">
-                    Saya adalah seorang Backend Developer yang antusias dengan pengalaman lebih dari 2 tahun dalam membangun API, sistem backend yang scalable, dan integrasi layanan modern.
-                    Perjalanan saya dimulai dari rasa penasaran tentang bagaimana data diproses di balik layar dan berkembang menjadi passion untuk menciptakan solusi backend yang efisien dan andal.
-                    </p>
-                    <p className="text-gray-300 leading-relaxed">
-                      Saya fokus pada pengembangan backend, terutama dengan Node.js, Express, TypeScript, dan integrasi API modern. Saya percaya pentingnya menulis kode yang efisien, scalable, serta mengikuti best practice untuk menghasilkan solusi backend yang andal dan berkualitas tinggi.
-                    </p>
+                  <h2 className="text-3xl font-bold text-white mb-6">About Me</h2>
                   <p className="text-gray-300 leading-relaxed">
-                    Saat tidak sedang ngoding, saya senang mengeksplorasi teknologi baru, berkontribusi ke proyek open-source, atau menikmati keindahan Gunung di Bali.
+                    I am an enthusiastic Backend Developer with over 2 years of experience in building APIs, scalable backend systems, and modern service integrations.
+                    My journey began with curiosity about how data is processed behind the scenes and evolved into a passion for creating efficient and reliable backend solutions.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    I focus on backend development, particularly with Node.js, Express, TypeScript, and modern API integrations. I believe in the importance of writing efficient, scalable code and following best practices to deliver high-quality, reliable backend solutions.
+                  </p>
+                  <p className="text-gray-300 leading-relaxed">
+                    When I'm not coding, I enjoy exploring new technologies, contributing to open-source projects, or enjoying the beauty of Bali's mountains.
                   </p>
                 </div>
 
@@ -176,38 +191,38 @@ export default function AboutPage() {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-4 flex items-center gap-2">
                       <Coffee className="w-5 h-5 text-blue-400" />
-                      Hal yang Saya Sukai
+                      Things I Love
                     </h3>
                     <ul className="space-y-3 text-gray-300">
-                        <li className="flex items-center gap-3">
+                      <li className="flex items-center gap-3">
                         <Code className="w-4 h-4 text-blue-400" />
-                        Membangun sistem backend yang efisien
-                        </li>
-                        <li className="flex items-center gap-3">
+                        Building efficient backend systems
+                      </li>
+                      <li className="flex items-center gap-3">
                         <Code className="w-4 h-4 text-blue-400" />
-                        Mengembangkan arsitektur backend yang handal
-                        </li>
+                        Developing reliable backend architectures
+                      </li>
                       <li className="flex items-center gap-3">
                         <Users className="w-4 h-4 text-blue-400" />
-                        Kolaborasi tim yang hebat
+                        Great team collaboration
                       </li>
                     </ul>
                   </div>
 
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-4">Fakta Singkat</h3>
+                    <h3 className="text-xl font-semibold text-white mb-4">Quick Facts</h3>
                     <div className="space-y-3 text-gray-300">
                       <div className="flex justify-between">
-                        <span>Lokasi:</span>
+                        <span>Location:</span>
                         <span className="text-blue-400">Denpasar, Bali</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Pengalaman:</span>
-                        <span className="text-blue-400">2+ Tahun</span>
+                        <span>Experience:</span>
+                        <span className="text-blue-400">2+ Years</span>
                       </div>
                       <div className="flex justify-between">
-                        <span>Ketersediaan:</span>
-                        <span className="text-green-400">Siap Bekerja</span>
+                        <span>Availability:</span>
+                        <span className="text-green-400">Available for Work</span>
                       </div>
                     </div>
                   </div>
@@ -218,44 +233,9 @@ export default function AboutPage() {
 
           {activeTab === "skills" && (
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold text-white mb-8 text-center">Kemampuan & Teknologi</h2>
-              <div className="space-y-12">
-                {skills.map((skillGroup, groupIndex) => (
-                  <motion.div
-                    key={skillGroup.category}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: groupIndex * 0.1, duration: 0.5 }}
-                  >
-                    <h3 className="text-2xl font-semibold text-white mb-6">{skillGroup.category}</h3>
-                    <div className="space-y-6">
-                      {skillGroup.technologies.map((tech, techIndex) => (
-                        <motion.div
-                          key={tech.name}
-                          className="relative"
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          transition={{ delay: (groupIndex * 0.1) + (techIndex * 0.05), duration: 0.5 }}
-                        >
-                          <div className="flex justify-between items-center mb-2">
-                            <span className="text-gray-300 font-medium">{tech.name}</span>
-                            <span className="text-gray-400 text-sm">{tech.level}%</span>
-                          </div>
-                          <div className="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-                            <motion.div
-                              className={`h-full bg-gradient-to-r ${tech.color} rounded-full relative`}
-                              initial={{ width: 0 }}
-                              animate={{ width: `${tech.level}%` }}
-                              transition={{ delay: (groupIndex * 0.2) + (techIndex * 0.1), duration: 1, ease: "easeOut" }}
-                            >
-                              <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
-                            </motion.div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </motion.div>
-                ))}
+              <h2 className="text-3xl font-bold text-white mb-8 text-center">Skills & Technologies</h2>
+              <div className="flex justify-center items-center min-h-[600px]">
+                <SkillsOrbit />
               </div>
             </div>
           )}
@@ -269,16 +249,16 @@ export default function AboutPage() {
           transition={{ delay: 0.8, duration: 0.6 }}
         >
           <h3 className="text-2xl font-bold text-white mb-4">
-            Mari Bekerja Sama
+            Let's Work Together
           </h3>
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-            Saya selalu terbuka untuk peluang baru dan proyek yang menarik. Jika Anda memiliki ide atau ingin berdiskusi, silakan hubungi saya.
+            I'm always open to new opportunities and interesting projects. If you have an idea or want to discuss, feel free to contact me.
           </p>
           <a
             href="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-medium transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-600/25"
           >
-            Mulai Percakapan
+            Start a Conversation
             <ExternalLink className="w-5 h-5" />
           </a>
         </motion.div>
